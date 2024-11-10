@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teksty Pocieszenia</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            animation: pulseBackground 3s infinite alternate;
+        }
+
+        @keyframes pulseBackground {
+            0% {
+                background-color: #121212;
+            }
+            50% {
+                background-color: #330000;
+            }
+            100% {
+                background-color: #121212;
+            }
+        }
+
+        .container {
+            padding: 20px;
+            width: 80%;
+            background-color: #1a1a1a;
+            border-radius: 20px;
+            border: 2px solid #ff0000;
+            text-align: center;
+        }
+
+        .content {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: transparent;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 20px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+            animation: pulseButton 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseButton {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            }
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="content" id="message">
+        <!-- Początkowy tekst pocieszenia -->
+    </div>
+    <button class="btn" id="newMessageButton">Nowy Tekst</button>
+</div>
+
+<script>
+    const messages = [
+        "Pamiętaj, że nawet najciemniejsza noc nie trwa wiecznie.",
+        "Kiedyś spojrzysz wstecz na te trudne chwile i będziesz dumna z tego, jak daleko zaszłaś.",
+        "Nie ma nic złego w tym, by nie czuć się dobrze. Ważne, by nie poddawać się w dążeniu do lepszego jutra.",
+        "Wszystko będzie dobrze, musisz tylko uwierzyć w siebie i nie poddawać się.",
+        "Każdy ból kiedyś mija, a po burzy zawsze wychodzi słońce.",
+        "Nie musisz być idealna. Wystarczy, że będziesz sobą, a to wystarczy.",
+        "Czasami życie jest trudne, ale nie zapominaj, że masz w sobie siłę, by przez to przejść.",
+        "Jeśli teraz czujesz się źle, to pamiętaj, że to tylko chwilowa sytuacja. Jutro będzie lepiej.",
+        "Cokolwiek się dzieje, nie jesteś sama. Zawsze jest ktoś, kto cię wspiera.",
+        "Każdy dzień jest nową szansą. Jeśli dzisiaj jest trudny, to jutro możesz zacząć na nowo.",
+        "Pamiętaj, że po każdej burzy wychodzi tęcza. Daj sobie czas, aby ją zobaczyć.",
+        "Twoja wartość nie zależy od tego, jak się czujesz dzisiaj. Jesteś niesamowita, niezależnie od wszystkiego.",
+        "Czasem to, czego najbardziej potrzebujesz, to odpoczynek i chwila ciszy.",
+        "Jestem pewna, że to, przez co teraz przechodzisz, w końcu doprowadzi cię do lepszego miejsca.",
+        "Zawsze pamiętaj, że jesteś warta wszystkiego, co najlepsze.",
+        "Każdy problem ma swoje rozwiązanie, a każda ciemna chmura kiedyś znika.",
+        "Masz w sobie niesamowitą siłę, której być może jeszcze nie dostrzegasz.",
+        "Każdy krok, który podejmujesz, zbliża cię do lepszego jutra.",
+        "To, co przeżywasz teraz, to tylko część twojej historii, która wkrótce minie.",
+        "W trudnych chwilach pamiętaj, że masz prawo do odpoczynku i do tego, by poczuć się lepiej.",
+        "Będziesz silniejsza po tym, co teraz przeżywasz. Wierzę w ciebie.",
+        "Czasami trzeba przejść przez burzę, by docenić spokój, który przychodzi później.",
+        "Zawsze pamiętaj, że nie musisz radzić sobie ze wszystkim samodzielnie.",
+        "Nigdy nie zapominaj, że po każdej trudnej chwili przychodzi czas na radość i spokój.",
+        "Jestem z tobą, bez względu na wszystko.",
+        "Jeśli czujesz się zagubiona, to pamiętaj, że jesteś na dobrej drodze. Zawsze znajdziesz drogę do siebie.",
+        "Nie martw się, wszystko się ułoży. Po prostu musisz poczekać na odpowiedni moment.",
+        "Nie musisz czuć się doskonała, by być wspaniała.",
+        "Z każdej trudnej chwili można wyciągnąć coś pozytywnego, musisz tylko pozwolić sobie na to.",
+        "Nie ma nic złego w tym, by poczuć się smutno. Ważne, by dać sobie czas na uzdrowienie.",
+        "Wszystko, co przeżywasz teraz, czyni cię silniejszą. Pamiętaj o tym.",
+        "Po każdej burzy przychodzi spokój. Daj sobie czas, by poczuć ten spokój."
+    ];
+
+    function getRandomMessage() {
+        const randomIndex = Math.floor(Math.random() * messages.length);
+        return messages[randomIndex];
+    }
+
+    const messageElement = document.getElementById("message");
+    messageElement.textContent = getRandomMessage();
+
+    const button = document.getElementById("newMessageButton");
+    button.addEventListener("click", function() {
+        messageElement.textContent = getRandomMessage();
+    });
+</script>
+
+</body>
+</html>

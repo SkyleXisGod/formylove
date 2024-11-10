@@ -3,151 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miłosny Tekst</title>
-    <!-- Link do Font Awesome dla ikon -->
+    <title>Miłosny Logowanie</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        /* Resetowanie marginesów i paddingów, by wszystko wyglądało równo, jak Twoje serce dla mnie */
+        /* Resetowanie marginesów i paddingów */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Tworzymy ciemne tło, jak noc, w której jedynym światłem jest moja miłość do Ciebie */
         body {
             height: 100vh;
-            background-color: #121212; /* Ciemne tło, by nasze serca świeciły jeszcze jaśniej */
+            background-color: #121212;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Arial', sans-serif; /* Lekkie, eleganckie litery, bo zasługujesz na piękno */
+            font-family: 'Arial', sans-serif;
             color: #fff;
             text-align: center;
             overflow: hidden;
         }
 
-        /* Kontener główny, w którym każda sekunda to wspólna chwila miłości, ma czerwoną, pulsującą ramkę */
-        .container {
+        /* Kontener logowania */
+        .login-container {
+            background-color: #1a1a1a;
+            border: 2px solid #ff0000;
+            border-radius: 20px;
+            width: 1000px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
             position: relative;
-            width: 50%;
-            height: 50%;
-            background-color: #1a1a1a; /* Ciemny kontener, w którym miłość do Ciebie jaśnieje */
-            border: 2px solid #ff0000; /* Czerwona neonowa ramka, jak moje serce bijące dla Ciebie */
-            border-radius: 20px; /* Zaokrąglone rogi, bo nasza miłość nie ma krawędzi */
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); /* Czerwona poświata wokół, jak nieustanny blask naszej miłości */
-            animation: pulseBorder 3s infinite ease-in-out; /* Pulsująca obramówka, jak bicie serca */
+            text-align: center;
+            animation: pulseBorder 3s infinite ease-in-out;
         }
 
-        /* Animacja pulsującej obramówki, jak pulsowanie mojego serca dla Ciebie każdego dnia */
+        /* Pulsująca obramówka */
         @keyframes pulseBorder {
-            0% {
-                box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(255, 0, 0, 1);
-            }
-            100% {
-                box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
-            }
+            0% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); }
+            50% { box-shadow: 0 0 40px rgba(255, 0, 0, 1); }
+            100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); }
         }
 
-        /* Serduszko w lewym górnym rogu, jak symbol mojej miłości do Ciebie */
-        .decorations-left {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 40px;
-            height: 40px;
-            background-image: url('https://png.pngtree.com/png-vector/20230131/ourmid/pngtree-red-neon-heart-shape-love-png-image_6581640.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            animation: pulseDecorations 3s infinite ease-in-out;
-        }
-
-        /* Serduszko w prawym górnym rogu, symbolizujące równowagę naszej miłości */
-        .decorations-right {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
-            background-image: url('https://png.pngtree.com/png-vector/20230131/ourmid/pngtree-red-neon-heart-shape-love-png-image_6581640.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            animation: pulseDecorations 3s infinite ease-in-out;
-        }
-
-        /* Animacja pulsujących serduszek, jak serca bijące dla siebie w rytm miłości */
-        @keyframes pulseDecorations {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.3);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* Tekst, który jest jak moje serce - bijące i pełne miłości do Ciebie */
-        .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Tekst pojawia się dokładnie w centrum, bo Ty jesteś moim centrum */
-            font-size: 30px; /* Wielki tekst, żebyś mogła poczuć moją miłość nawet bez słów */
+        /* Tekst powitalny */
+        .welcome-text {
+            font-size: 24px;
             font-weight: bold;
-            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* Czerwony cień, jak blask miłości, który Cię otacza */
-            animation: fadeInText 1s ease-out, pulseTextColor 3s infinite alternate; /* Efekty animacji, które pokazują moje uczucia */
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+            animation: fadeInText 1s ease-out;
         }
 
-        /* Animacja pojawiania się tekstu, jak czułe słowa, które płyną prosto z serca */
         @keyframes fadeInText {
-            0% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.8);
-            }
-            100% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Pulsowanie koloru tekstu, jak zmieniające się odcienie mojej miłości do Ciebie */
-        @keyframes pulseTextColor {
-            0% {
-                color: #ff0000; /* Intensywny czerwony - jak moje serce */
-            }
-            50% {
-                color: #ff6666; /* Jaśniejszy czerwony - jak czułe myśli, które mam o Tobie */
-            }
-            100% {
-                color: #ff0000; /* Powrót do intensywnego czerwonego - bo moja miłość do Ciebie jest niezachwiana */
-            }
+        /* Pole na kod */
+        .input-container {
+            margin-bottom: 20px;
         }
 
-        /* Pulsujące tło, jak moje serce, które bije na Twoje zawołanie */
-        body {
-            background-color: #121212;
-            animation: pulseBackground 3s infinite alternate;
+        .input-field {
+            padding: 10px;
+            font-size: 18px;
+            width: 80%;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            color: #fff;
+            background-color: #333;
+            text-align: center;
+            letter-spacing: 5px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
         }
 
-        @keyframes pulseBackground {
-            0% {
-                background-color: #121212;
-            }
-            50% {
-                background-color: #330000; /* Jak wschód słońca nad Twoim sercem */
-            }
-            100% {
-                background-color: #121212;
-            }
-        }
-
-        /* Przycisk, który pozwala Ci poczuć puls mojego serca przy każdym kliknięciu */
-        .btn {
+        /* Przycisk logowania */
+        .login-btn {
             padding: 15px 30px;
             font-size: 20px;
             font-weight: bold;
@@ -158,223 +89,70 @@
             cursor: pointer;
             text-transform: uppercase;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+            margin-top: 20px;
             animation: pulseButton 3s infinite ease-in-out;
-            margin-right: 10px; /* Odstęp między przyciskami */
         }
 
-        /* Pulsowanie przycisku, jak pulsowanie mojego serca dla Ciebie każdego dnia */
         @keyframes pulseButton {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-            }
-            50% {
-                transform: scale(1.1);
-                box-shadow: 0 0 25px rgba(255, 0, 0, 1);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-            }
+            0% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); }
+            50% { transform: scale(1.1); box-shadow: 0 0 25px rgba(255, 0, 0, 1); }
+            100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); }
         }
 
-        .btn:focus {
+        .login-btn:focus {
             outline: none;
-        }
-
-        /* Kontener przycisków, by były obok siebie */
-        .buttons-container {
-            position: absolute;
-            bottom: 20px;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Nowy przycisk z ikoną głośnika */
-        .btn-music {
-            padding: 15px 20px;
-            font-size: 0;
-            background-color: transparent;
-            color: #ff0000;
-            border: 2px solid #ff0000;
-            border-radius: 10px;
-            cursor: pointer;
-            animation: pulseButton 3s infinite ease-in-out;
-            margin-left: 10px;
-        }
-
-        /* Ikona głośnika */
-        .btn-music i {
-            font-size: 30px;
-            color: #ff0000;
         }
 
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="decorations-left"></div>
-    <div class="decorations-right"></div>
-    <div class="content" id="message">
+    <!-- Kontener logowania -->
+    <div class="login-container">
+        <div class="welcome-text">Witaj w miłosnej strefie! Rozwiąż zagadkę, aby się zalogować. ( 8 znaków )<br><br>
+
+            <i>Pewnego dnia wszystko się zmieniło. Jakby świat nagle zyskał nowe kolory, <br> 
+            a każda chwila  zaczęła mieć więcej znaczenia. Tego dnia odkryłem, że czas ma <br> 
+            inny wymiar, a każda minuta staje się wiecznością, kiedy dzielimy ją razem. Od <br> 
+            tamtego momentu wszystko nabrało sensu, jakbyś była tym, na co czekałem <br> 
+            przez całe życie, choć nigdy nie wiedziałem, że tego szukam.</i>
+        </div>
+        
+        <div class="input-container">
+            <input type="text" id="password" class="input-field" placeholder="Podaj kod" maxlength="8">
+        </div>
+
+        <button class="login-btn" id="loginButton">Zaloguj się</button>
     </div>
-    <audio id="background-music" loop volume="0.3">
-        <source src="audio/sparkydeathcap.mp3" type="audio/mpeg">
-        Twoja przeglądarka nie obsługuje elementu audio.
-    </audio>
-    
-    <div class="buttons-container">
-        <button class="btn" id="newMessageButton">Nowy tekst</button>
-        <!-- Nowy przycisk z ikoną głośnika -->
-        <button class="btn-music" onclick="toggleMusic()">
-            <i class="fas fa-volume-up"></i>
-        </button>
-    </div>
 
-</div>
+    <script>
+        // Kod do rozwiązania łamigłówki
+        const correctPassword = '26092024';
 
-<script>
-    // Tablica z miłosnymi tekstami, które wyrażają to, co czuję do Ciebie
-    const messages = [
-    "Kocham Cię za to, kim jesteś, i za to, kim jestem, gdy jestem z Tobą.",
-    "Ty jesteś moim najlepszym przyjacielem, moim partnerem i moją miłością.",
-    "W Twoich oczach widzę wszystko, czego kiedykolwiek szukałem.",
-    "Moje serce bije tylko dla Ciebie.",
-    "Kocham Cię nie tylko za to, kim jesteś, ale za to, kim jestem, gdy jestem przy Tobie.",
-    "Z Tobą każda chwila staje się niezapomniana.",
-    "Twoja miłość sprawia, że moje serce bije szybciej.",
-    "Kiedy Cię widzę, moje serce zawsze wykonuje salto z radości.",
-    "Z Tobą czuję, że całe życie nabiera sensu.",
-    "Z Tobą każdy dzień to najpiękniejszy dzień w moim życiu.",
-    "Chcę z Tobą spędzić resztę życia, każdego dnia, każdej minuty.",
-    "Każdy Twój uśmiech to dla mnie najpiękniejszy prezent.",
-    "Jesteś moim słońcem, które rozświetla każdy mój dzień.",
-    "Z Tobą czuję się pełny, jakbym odnalazł część siebie.",
-    "Bez Ciebie świat byłby szary i pusty.",
-    "Jestem gotowy zrobić wszystko, by Cię uszczęśliwić.",
-    "Kocham Cię tak mocno, że słowa nie są w stanie tego wyrazić.",
-    "Twoja miłość sprawia, że chcę być lepszym człowiekiem.",
-    "Każdy dzień z Tobą to najpiękniejszy dzień mojego życia.",
-    "Moje serce należy do Ciebie na zawsze.",
-    "Każda chwila z Tobą jest jak magiczny sen.",
-    "Z Tobą mogę stawić czoła wszystkiemu, bo wiem, że będziesz przy mnie.",
-    "Jesteś moim marzeniem, które stało się rzeczywistością.",
-    "Kocham Cię nie tylko za to, co robisz, ale za to, kim jesteś.",
-    "Kiedy patrzę na Ciebie, widzę całe moje szczęście.",
-    "Twoja miłość to najpiękniejszy prezent, jaki mogłem otrzymać.",
-    "Jesteś moim życiem, moim światem, moją miłością.",
-    "Każda minuta bez Ciebie jest jak wieczność.",
-    "W Twoich ramionach czuję się jak w domu.",
-    "Z Tobą wszystko jest możliwe.",
-    "Każdy Twój dotyk sprawia, że czuję się jak w niebie.",
-    "Bez Ciebie nie wyobrażam sobie życia.",
-    "Chcę być Twoim pierwszym myśleniem rano i ostatnim przed snem.",
-    "Kocham Cię bardziej niż wczoraj, ale mniej niż jutro.",
-    "Jesteś moim światem, moim słońcem i moim sercem.",
-    "Każdy Twój gest, każde Twoje słowo sprawia, że kocham Cię jeszcze bardziej.",
-    "Z Tobą życie staje się piękne, pełne radości i miłości.",
-    "Twój śmiech to dla mnie najpiękniejsza melodia.",
-    "Jestem szczęśliwy, że mogę dzielić swoje życie z Tobą.",
-    "Kocham Cię za to, jak sprawiasz, że czuję się wyjątkowo.",
-    "W Twoich oczach widzę przyszłość, w której chcę być na zawsze.",
-    "Jesteś moim domem, moją przystanią, moim bezpieczeństwem.",
-    "Każda chwila spędzona z Tobą to prezent, który będę pielęgnować do końca życia.",
-    "Z Tobą każda chwila ma znaczenie, każda minuta jest pełna miłości.",
-    "Jestem Twoim na zawsze, bez względu na wszystko.",
-    "Moje życie nabrało sensu, odkąd Cię poznałem.",
-    "Chcę być przy Tobie na zawsze, w dobrych i złych chwilach.",
-    "Twoja miłość to dla mnie największy skarb.",
-    "Z Tobą każda chwila staje się magiczna.",
-    "Kocham Cię nie tylko za to, co robisz, ale za to, kim jesteś.",
-    "Z Tobą każda chwila jest cenniejsza niż złoto.",
-    "Twoja miłość jest jak ogień, który nieustannie mnie ogrzewa.",
-    "Jestem całkowicie zakochany w Tobie.",
-    "Każdy dzień z Tobą jest jak sen, z którego nie chcę się obudzić.",
-    "Jesteś moim powodem do uśmiechu każdego dnia.",
-    "Czuję się przy Tobie pełny, jak nigdy wcześniej.",
-    "Twoje spojrzenie sprawia, że moje serce bije szybciej.",
-    "Jesteś moim największym marzeniem, które spełniło się.",
-    "Z Tobą czuję, że wszystko jest możliwe.",
-    "Kobiety.",
-    "Chciałbym, żebyśmy na zawsze trzymali się za ręce.",
-    "Jesteś moim szczęściem, moim życiem, moją miłością.",
-    "W Twoich ramionach czuję się bezpiecznie i kochany.",
-    "Jestem całkowicie zakochany w Twojej duszy.",
-    "Każdy dzień z Tobą to dzień pełen radości i miłości.",
-    "Jesteś moim domem, moim miejscem na ziemi.",
-    "Każdy Twój uśmiech to dla mnie całe moje szczęście.",
-    "Z Tobą wszystko staje się piękniejsze.",
-    "Jesteś moim wszystkiem i bez Ciebie nie potrafię żyć.",
-    "Każdy moment spędzony z Tobą to najcenniejszy skarb.",
-    "Ty sprawiasz, że świat staje się lepszy.",
-    "Kocham Cię za Twoją delikatność, za Twoją siłę, za Twoje serce.",
-    "Z Tobą czuję, że życie ma sens.",
-    "Kocham Cię za to, że zawsze jesteś przy mnie.",
-    "Z Tobą każda chwila jest pełna magii.",
-    "Jestem Twoim, na zawsze i bezwarunkowo.",
-    "Nie wyobrażam sobie życia bez Ciebie.",
-    "Jesteś moim powodem do uśmiechu, moim szczęściem, moją miłością.",
-    "Z Tobą każda minuta jest pełna miłości.",
-    "W Twoich oczach widzę wszystko, czego pragnę.",
-    "Kocham Cię za to, jak sprawiasz, że czuję się wspaniale.",
-    "Jesteś moim najpiękniejszym marzeniem, które stało się rzeczywistością.",
-    "Z Tobą moje serce bije w rytmie miłości.",
-    "Każdy moment z Tobą jest jak magia.",
-    "Jesteś moją inspiracją, moim powodem do życia.",
-    "Twoje ciepło sprawia, że czuję się jak w domu.",
-    "Z Tobą czuję, że życie jest pełne możliwości.",
-    "Kocham Cię za Twoje serce, które daje mi szczęście.",
-    "Każdy dzień z Tobą to dar, który chcę pielęgnować na zawsze.",
-    "Bez Ciebie moje serce jest puste.",
-    "Jesteś moim światłem w ciemności.",
-    "Z Tobą każda chwila staje się niezapomniana.",
-    "Kocham Cię za to, jak potrafisz sprawić, że czuję się wyjątkowo.",
-    "Każdy Twój gest, każda Twoja słowo sprawiają, że kocham Cię bardziej.",
-    "Jesteś moim światem, moim sercem i moją duszą.",
-    "Z Tobą życie nabiera barw, pełne radości i miłości.",
-    "Twoje serce jest moim domem.",
-    "Chcę być Twoim na zawsze, w dobrych i złych chwilach.",
-    "Z Tobą jestem gotowy podjąć każde wyzwanie, bo wiem, że razem przetrwamy wszystko.",
-    "Kocham Cię bardziej niż wczoraj, ale mniej niż jutro.",
-    "Z Tobą każda chwila jest najpiękniejsza.",
-    "Jestem Twoim, na zawsze, bez względu na wszystko.",
-    "Każdy Twój dotyk sprawia, że czuję się szczęśliwy.",
-    "Jestem zakochany w Tobie każdego dnia coraz bardziej.",
-    "Z Tobą czuję, że mogę przenosić góry.",
-    "Kocham Cię za to, jak jesteś, za Twoją obecność.",
-    "Ty jesteś moim szczęściem, moim światem, moją miłością.",
-    "Chciałbym spędzić z Tobą każdy dzień, każdą chwilę."
-];
+        const passwordInput = document.getElementById('password');
+        const loginButton = document.getElementById('loginButton');
 
+        // Obsługuje logowanie
+        loginButton.addEventListener('click', function() {
+            const enteredPassword = passwordInput.value;
+            
+            if (enteredPassword === correctPassword) {
+                alert('Zalogowano pomyślnie! Witamy w Miłosnej Strefie.');
+                // Przekierowanie lub akcja po zalogowaniu
+                window.location.href = 'premain.html'; // Zmień na odpowiednią stronę
+            } else {
+                alert('Błędny kod. Spróbuj ponownie!');
+                passwordInput.value = ''; // Wyczyść pole
+            }
+        });
 
-    // Funkcja do losowania tekstu, kochanie
-    function getRandomMessage() {
-        const randomIndex = Math.floor(Math.random() * messages.length);
-        return messages[randomIndex];
-    }
-
-    const messageElement = document.getElementById("message");
-    messageElement.textContent = getRandomMessage(); // Pokazuje losowy tekst na początku
-
-    // Zmienianie tekstu po kliknięciu przycisku
-    const button = document.getElementById("newMessageButton");
-    button.addEventListener("click", function() {
-        messageElement.textContent = getRandomMessage(); // Zmienia tekst na nowy
-    });
-
-    // Funkcja do włączania/wyłączania muzyki
-    function toggleMusic() {
-        var audioElement = document.getElementById('background-music'); // Pobierz element audio
-        audioElement.volume = 0.06; // Ustawia głośność na 20%
-        if (audioElement.paused) {
-            audioElement.play(); // Jeśli muzyka jest zatrzymana, uruchom ją
-        } else {
-            audioElement.pause(); // Jeśli muzyka jest w trakcie odtwarzania, zatrzymaj ją
-        }
-    }
-</script>
+        // Obsługuje wprowadzenie hasła (możliwość wpisania przez "Enter")
+        passwordInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                loginButton.click();
+            }
+        });
+    </script>
 
 </body>
 </html>

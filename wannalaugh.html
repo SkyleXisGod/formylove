@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Żarty i Memy</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            animation: pulseBackground 3s infinite alternate;
+        }
+
+        @keyframes pulseBackground {
+            0% {
+                background-color: #121212;
+            }
+            50% {
+                background-color: #330000;
+            }
+            100% {
+                background-color: #121212;
+            }
+        }
+
+        .container {
+            padding: 20px;
+            width: 80%;
+            background-color: #1a1a1a;
+            border-radius: 20px;
+            border: 2px solid #ff0000;
+            text-align: center;
+        }
+
+        .content {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: transparent;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 20px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+            animation: pulseButton 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseButton {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            }
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="content" id="joke">
+        <!-- Żart lub mem -->
+    </div>
+    <button class="btn" id="newJokeButton">Nowy Żart</button>
+</div>
+
+<script>
+    const jokes = [
+        "Dlaczego komputerowi nigdy nie jest zimno? Bo zawsze ma Windows!",
+        "Dlaczego matematyka nie jest popularna na imprezach? Bo ma za dużo problemów.",
+        "Jakie zwierzęta mają najlepsze poczucie humoru? Żarty z kangurów!",
+        "Co mówi jedna ściana do drugiej? Spotkamy się na rogu!",
+        "Co robi informatyk po ślubie? Tworzy backup!",
+        "Dlaczego programiści nigdy nie lubią pływać? Bo mają za dużo błędów!",
+        "Dlaczego zebra zawsze jest spóźniona na zebranie? Bo zawsze zostaje w martwym punkcie.",
+        "Co mówi jedna książka do drugiej? Tylko nie zamykaj mnie!",
+        "Dlaczego książki są lepsze niż ludzie? Bo nigdy cię nie zdradzą!",
+        "Czy można wygrać z grawitacją? Nie, zawsze cię ściągnie na dół!",
+        "Dlaczego komputerowi nigdy nie jest smutno? Bo zawsze ma coś w pamięci!",
+        "Jakie drzewa są najlepsze na relaks? Lasy komediowe!",
+        "Co robi zegar na wakacjach? Zatrzymuje czas!",
+        "Dlaczego komputer jest zawsze wyciszony? Bo nie chce nikogo słuchać!",
+        "Dlaczego książki są najlepszymi przyjaciółmi? Zawsze mają rację!",
+        "Dlaczego pies zawsze jest uśmiechnięty? Bo ma dwie pasje: jedzenie i spacerowanie!"
+    ];
+
+    function getRandomJoke() {
+        const randomIndex = Math.floor(Math.random() * jokes.length);
+        return jokes[randomIndex];
+    }
+
+    const jokeElement = document.getElementById("joke");
+    jokeElement.textContent = getRandomJoke();
+
+    const button = document.getElementById("newJokeButton");
+    button.addEventListener("click", function() {
+        jokeElement.textContent = getRandomJoke();
+    });
+</script>
+
+</body>
+</html>
